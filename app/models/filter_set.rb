@@ -1,14 +1,6 @@
 # -*- encoding : utf-8 -*-
-class FilterSet < MediaSet
-
-  # NOTE provides alias for routes and used for sti type switcher
-  def self.model_name
-    MediaSet.model_name
-  end
-
-  # override the validation of MediaSet
-  def validate_settings 
-  end
+class FilterSet < MediaResource
+  store :settings
 
   def get_filter
     settings[:filter] || ACCEPTED_SETTINGS[:filter][:default]
