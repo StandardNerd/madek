@@ -2,6 +2,10 @@
 class FilterSet < MediaResource
   store :settings
 
+  def media_type
+    self.type.gsub(/Media/, '')
+  end
+
   def get_filter
     settings[:filter] || ACCEPTED_SETTINGS[:filter][:default]
   end

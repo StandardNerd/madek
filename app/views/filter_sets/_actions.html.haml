@@ -15,7 +15,7 @@
         -if @can_edit
           = render :partial => "media_resources/actions/edit", :locals => {mr: @filter_set}
        
-        = render :partial => "media_resources/actions/permissions"
+        = render "media_resources/actions/permissions", media_resource: @filter_set
 
         = render :partial => "media_resources/actions/organize"
 
