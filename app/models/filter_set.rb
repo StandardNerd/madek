@@ -7,11 +7,11 @@ class FilterSet < MediaResource
   end
 
   def get_filter
-    settings[:filter] || ACCEPTED_SETTINGS[:filter][:default]
+    settings[:filter] || {} 
   end
 
   def child_media_resources(user)
-    settings[:filter] ||= ACCEPTED_SETTINGS[:filter][:default]
+    settings[:filter] ||= {}
     MediaResource.filter(user, settings[:filter])
   end
 
